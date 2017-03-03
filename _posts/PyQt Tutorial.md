@@ -35,12 +35,71 @@
 
 ## Classes
 
+- **QObject**: The base class for all Qt Objects.(top in the hierarchy) with **QPaintDevice** which is the base class for all Qt objects that can be painted.
+
+- **QApplication**: manages the GUI's control flow and main settings. This has the main event loop where all events are processed.
+
+- **QWidget**: The base class for all user interface objects. This class comes from QObject and QPaintDevice
+
+- For more info, http://pyqt.sourceforge.net/Docs/PyQt4/classes.html
 
 
-## Widgets
+
+### Widgets
+
+QLabel
+
+QlineEdit
+
+QPushButton
+
+QRadioButton
+
+QCheckBox
+
+QComboBox
+
+QSpinBox
+
+QSlider Widget & Signal
+
+QMenuBar, QMenu & QAction
+
+QToolBar
+
+QInputDialog
+
+QFontDialog
+
+QFileDialog
+
+QTab
+
+QStacked
+
+QSplitter
+
+QDock
+
+QStatusBar
+
+QList
+
+QScrollBar
+
+QCalendar
+
+
+
+## Layout
+
+- setGeometry()
+
+## Signals and Slots
 
 
 
 
+- ! contains Quotes from the official page (Classes)
 
 
