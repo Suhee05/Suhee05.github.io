@@ -4,11 +4,11 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
+A member of EMCS Labs in Korea University
 
 ### More Information
 
-A member of EMCS Labs in Korea University
+I love Funnasyi
 
 ### Contact me
 
