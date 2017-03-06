@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Introduction to C programming Part3
+date: 2016-01-10
 ---
 
 

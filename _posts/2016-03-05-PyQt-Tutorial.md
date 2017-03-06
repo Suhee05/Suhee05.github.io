@@ -1,6 +1,7 @@
 ---
 layout: post
 title: PyQt Tutorial
+date: 2016-03-05
 ---
 
 # PyQt?
