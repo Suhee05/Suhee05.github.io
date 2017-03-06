@@ -5,8 +5,6 @@ date: 2016-01-10
 ---
 
 
-#Introduction to C programming 
-
 # Part3 - 포인터
 
 ## 포인터란 무엇인가?

@@ -4,7 +4,6 @@ title: Introduction to C programming Part4
 date: 2016-01-16
 ---
 
-#Introduction to C programming 
 
 # Part4 - 메모리의 동적할당, 구조체, 전처리기
 

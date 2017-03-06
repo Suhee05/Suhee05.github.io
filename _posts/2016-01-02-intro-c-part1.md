@@ -4,7 +4,6 @@ title: Introduction to C programming Part1
 date: 2016-01-02
 ---
 
-#Introduction to C programming 
 
 # Part1 - 변수, 조건문 및 반복문
 
