@@ -8,8 +8,8 @@ Some information about you!
 
 ### More Information
 
-A place to include any other types of information that you'd like to include about yourself.
+A member of EMCS Labs in Korea University
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[ninas96211@gmail.com](mailto:ninas96211@gmail.com)
