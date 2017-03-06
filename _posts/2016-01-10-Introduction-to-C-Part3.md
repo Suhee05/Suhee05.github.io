@@ -1,3 +1,8 @@
+---
+layout: post
+title: Introduction to C programming Part3
+---
+
 
 #Introduction to C programming 
 

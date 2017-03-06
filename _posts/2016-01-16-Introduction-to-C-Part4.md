@@ -1,3 +1,8 @@
+---
+layout: post
+title: Introduction to C programming Part4
+---
+
 #Introduction to C programming 
 
 # Part4 - 메모리의 동적할당, 구조체, 전처리기

@@ -1,3 +1,8 @@
+---
+layout: post
+title: Introduction to C programming Part2
+---
+
 #Introduction to C programming 
 
 # Part2 - 함수
