@@ -156,14 +156,13 @@ For more info, http://pyqt.sourceforge.net/Docs/PyQt4/new_style_signals_slots.ht
 ### Basic Frame
 
 ```
-#1st example
 
 import sys
 from PyQt5 import QtCore, QtGui, QtWidgets # Import modules from PyQt5
 
-class Ui_MainWindow(QMainWindow): #Class for your GUI. In this case, Ui_MainWindow inherited class from QMainWindow.
-    def __init__(self): #Initiation of Ui_MainWindow
-        super().__init__() #Initiation of QMainWindow
+class Ui_MainWindow(QtWidgets.QMainWindow): #Class for your GUI. In this case, Ui_MainWindow inherited class from QMainWindow.
+    def __init__(self): #Initialization of Ui_MainWindow
+        super(Ui_MainWindow,self).__init__() #Initialization of QMainWindow
         self.setupUi() #Set up layout & signals and slots
         
     def setupUi(self):
@@ -178,7 +177,7 @@ class Ui_MainWindow(QMainWindow): #Class for your GUI. In this case, Ui_MainWind
         title_label.setAlignment(QtCore.Qt.AlignCenter)
         
         cm_label = QtWidgets.QLabel("Cm", self)
-        cm_label.move(190, 120) #Since there is QtCore, cm_label.setGeometry(QtCore.QRect(520, 120, 91, 41))
+        cm_label.move(190, 120) #Sinch there is QtCore, cm_label.setGeometry(QtCore.QRect(520, 120, 91, 41))
         cm_label.resize(91, 41)
         font = QtGui.QFont()
         font.setPointSize(19)
@@ -198,7 +197,7 @@ class Ui_MainWindow(QMainWindow): #Class for your GUI. In this case, Ui_MainWind
         self.input_lineEdit.move(160, 180)
         self.input_lineEdit.resize(160, 80)
         
-        self.result_label = QtWidgets.QLabel("", self) # Other function (not setupUi) refers this label. 
+        self.result_label = QtWidgets.QLabel("", self) #Other function (not setupUi) refers this label. 
         self.result_label.move(490, 180)
         self.result_label.resize(160, 80)
         font = QtGui.QFont()
@@ -211,18 +210,19 @@ class Ui_MainWindow(QMainWindow): #Class for your GUI. In this case, Ui_MainWind
         convert_button.resize(113,32)
         convert_button.clicked.connect(self.btn_clicked)
 		
-	def btn_clicked(self):
-		 cm_input = float(self.input_lineEdit.text())
-		 inch_output = cm_input * 0.393701
-		 self.result_label.setText(str(inch_output))
+    def btn_clicked(self):
+        
+        cm_input = float(self.input_lineEdit.text())
+        inch_output = cm_input*0.393701
+        self.result_label.setText(str(inch_output))
    
-if __name__ == "__main__": # These lines below are essential for running 
-    app = QApplication(sys.argv)
+if __name__ == "__main__": #These lines below are essential for running 
+    app = QtWidgets.QApplication(sys.argv)
     mywindow = Ui_MainWindow()
     mywindow.show()
     app.exec_() 
-        
 
+ 
 ```
 
 
