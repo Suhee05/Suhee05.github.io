@@ -1,7 +1,7 @@
 ---
 layout: post
 title: [Algorithm] Merge sort
-date: 2016-03-05
+date: 2017-03-14
 ---
 
 
@@ -39,7 +39,7 @@ date: 2016-03-05
 
 #### mergesort
 
-
+mergesort는 재귀함수 *recursive function* 이다. 어떤 mergesort(tmp,A,p,r)
 
 
 #### merge
