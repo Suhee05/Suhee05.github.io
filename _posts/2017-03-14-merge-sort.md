@@ -1,6 +1,6 @@
 ---
 layout: post
-title: [Algorithm] Merge sort
+title: Algorithm - Merge sort
 date: 2017-03-14
 ---
 
@@ -13,7 +13,7 @@ date: 2017-03-14
 
 ### 그림
 
-![Alt text]()
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/mergesort.jpg?raw=true)
 
 ### 알고리즘 설명
 

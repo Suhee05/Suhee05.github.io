@@ -1,7 +1,7 @@
 ---
 layout: post
 title: C Tutorial in Korean
-date: 2016-03-05
+date: 2017-03-06
 ---
 
 ## C tutorial은 네 개의 파트로 나누어집니다
