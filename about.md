@@ -4,11 +4,12 @@ title: About
 permalink: /about/
 ---
 
-A member of EMCS Labs in Korea University
 
-### More Information
 
-I love Funnasyi
+### About
+
+* Korea University, B.A. in English Literature & Linguistics and LBNC(Language, Brain and Computer)
+* Interest : Machine Learning, Speech Recognition, IOS App development
 
 ### Contact me
 
