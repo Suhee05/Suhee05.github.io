@@ -29,17 +29,17 @@ permalink: /about/
 ### Works
 
 * **Real Time Speech Recognition IOS Application [PRIVATE]**
-</br> 
+<br> 
 Created for accuracy test for speech recoginition engine using Kaldi 
 
 * **Speech Synthesis Engine & Web Service [PRIVATE]**
-</br> 
+<br> 
 Tensorflow model for Speech Synthesis and Its server for web service.
 
 * **Text Independent Speaker Verification Using GE2E Loss [PUBLIC]**
-</br> 
+<br> 
 Tensorflow model for Text Independent Speaker Verification
-</br> 
+<br> 
 [Github Repo](https://github.com/Suhee05/Text-Independent-Speaker-Verification)
 
 
