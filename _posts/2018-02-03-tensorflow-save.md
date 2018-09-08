@@ -4,7 +4,6 @@ title: Tensorflow Model export
 date: 2018-02-03
 ---
 
-written by Suhee Jo
 
 ## Tensorflow Model Save and Restore
 

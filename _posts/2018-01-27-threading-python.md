@@ -11,7 +11,7 @@ Threading 은 resource 공유
 하나의 Process 에 대해서 다수의 thread 존재 가능
 
 ```
-# Ex (1)
+# Ex (0)
 
 from _thread import start_new_thread, allocate_lock
 import time
@@ -52,10 +52,10 @@ while number < 10000:
 - 1. threading.Thread class 를 상속받은 뒤 run method 를 override 하는 방법(Recommended)
 - 2. 실행 시키고자 하는 작업(= a callable object, for example a function)을 constructor(= \_\_init__) 에게 넘기는 방법
 
-1번으로 implement
+**1번으로 implement**
 
 ```
-# Ex (2)
+# Ex (1)
 
 import threading
 
@@ -76,10 +76,10 @@ def main():
 main()
 
 ```
-2번으로 implement
+**2번으로 implement8*
 
 ```
-# Ex (3)
+# Ex (2)
 
 import threading
 
@@ -102,12 +102,12 @@ main()
 
 ```
 
-2번의 simpler 버전
-</br>
+**2번의 simpler 버전**
+<br>
 참고 : threading 은 _thread를 기반으로 한 higher-level API module 이다. 예를 들면 자동으로 lock을 제공한다던가 하는, 사용자가 쓰기 쉬운 장점들이 있다.
 
 ```
-# Ex (4)
+# Ex (3)
 
 from _thread import start_new_thread
 
@@ -127,8 +127,8 @@ class MyClass():
 
 
 ```
-# Ex (5)
-# Ex (1) 과 결과를 비교해 볼 것
+# Ex (4)
+# Ex (0) 과 결과를 비교해 볼 것
 
 from _thread import start_new_thread, allocate_lock
 import time
@@ -173,7 +173,7 @@ while number < 10000:
 - join 메쏘드를 call 한 thread가 일을 종료할 때까지 기다려준다
 
 ```
-# Ex (6)
+# Ex (5)
 
 import threading
 
@@ -217,7 +217,7 @@ def main():
 
 
 ```
-Ex (7)
+Ex (6)
 
 # ibm developer works의 예제 코드를 수정했음
 
