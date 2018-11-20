@@ -19,7 +19,7 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 
 <script type="math/tex; mode=display">y=w^{\mathsf{T}}x</script>
 
-![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda1.jpeg?raw=true)
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda1.png?raw=true)
 
 데이터 공간 상의 각 점들이 projection 평면 위에 표현되면 다음과 같이 나타납니다
 
@@ -33,7 +33,7 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 
 <script type="math/tex; mode=display">S_{b} , S_{w}</script> 
 
-![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda2.jpeg?raw=true)
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda2.png?raw=true)
 
 는 각각 between class, within class 의 covariance matrix 입니다.
 
@@ -42,19 +42,22 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 </script>
 <script type="math/tex; mode=display">S_w = \sum (X_n - m_1)(X_n - m_1)^T</script>
 
-![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda3.jpeg?raw=true)
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda3.png?raw=true)
 
 이 때 Lagrangian Dual과 KKT 조건을 활용 하면 다음과 같은 식을 얻을 수 있습니다.
 
 
 <script type="math/tex; mode=display">S_{w}^{-1}S_{b}w = \lambda w</script>
 
-![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda4.jpeg?raw=true)
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda4.png?raw=true)
 
 
 <script type="math/tex; mode=display">S_{w}^{-1}S_{b}w</script>
 
 즉 이것은 위에 대한 eigen value 문제이며, 가장 큰 eigenvalue에 대응하는 eigen vector w 가 우리가 구하고자 하는 것입니다.
+
+아래코드는 위 수식을 통해 class 2 개의 데이터셋에 대해 LDA로 w 값을 찾아낸 것입니다.
+
  
 
 
@@ -111,9 +114,46 @@ import matplotlib.pyplot as plt
 ### Kernel Fisher Discriminant 
 
 
-```
+앞에서는 Linear Discriminant에 대해서만 다루었다면, 이번에는 Kernel을 이용해 보다 복잡한 모델링을 시도해 보겠습니다.
+LDA에 커널을 적용한다면 어떻게 될까요?
 
-```
+우선 데이터셋 Z에 대한 full covariance 는 다음과 같습니다. 
+
+<script type="math/tex; mode=display">
+C^\Phi = \frac{1}{N}\sum_{i=1}^N(\Phi \left(x_n \right) - m^\Phi)(\Phi \left(x_n \right) - m^\Phi)^T
+</script>
+
+<script type="math/tex; mode=display">m^\Phi = \frac{1}{N}\sum_{i=1}^N \Phi \left(x_n \right)</script>
+
+within class variance와 between class variance 는 다음과 같이 나타나게 됩니다.
+
+<script type="math/tex; mode=display">S_{W}^\Phi = \sum_{i=1,2}\sum_{i=1,2}^N(\Phi \left(x_n^i \right) - m_i^\Phi)(\Phi \left(x_n^i \right) - m_i^\Phi)^T </script>
+
+<script type="math/tex; mode=display">S_{B}=(m_2^\Phi - m_1^\Phi)(m_2^\Phi - m_1^\Phi)^T </script>
+
+<script type="math/tex; mode=display">m_i^\Phi = \frac{1}{N_i}\sum_{i=1}^N \Phi \left(x_j^i \right)</script>
+
+projected vector는 다음과 같이 나타나게 됩니다.
+
+<script type="math/tex; mode=display"> w = \sum_{n=1}^N \alpha_n \Phi(x_n) </script>
+
+식을 풀어헤치면 결국 Objective function은 다음과 같이 나타납니다.
+
+<script type="math/tex; mode=display"> J(\alpha ) = \frac{\alpha^TM\alpha}{\alpha^TN\alpha} </script>
+<script type="math/tex; mode=display"> M = (\mu_2 - \mu_1)(\mu_2 - \mu_1)^T </script>
+<script type="math/tex; mode=display"> N = \sum_{j=1,2}K_j(I-1_{l_j})K_j^T </script>
+
+우리가 구하려는 것은
+
+<script type="math/tex; mode=display">\alpha = N^{-1}(M_2 - M_1)</script>
+
+이고, kernel 에 의해 새롭게 주어진 데이터포인트는 다음과 같다.
+
+<script type="math/tex; mode=display">y(x) = (w * \Phi(x)) = \sum_{n=1}^N\alpha_nK(x_n,x)</script>
+
+
+
+
 
 References
 </br>
