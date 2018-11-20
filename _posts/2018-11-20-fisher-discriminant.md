@@ -125,6 +125,8 @@ C^\Phi = \frac{1}{N}\sum_{i=1}^N(\Phi \left(x_n \right) - m^\Phi)(\Phi \left(x_n
 
 <script type="math/tex; mode=display">m^\Phi = \frac{1}{N}\sum_{i=1}^N \Phi \left(x_n \right)</script>
 
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda5.png?raw=true)
+
 within class variance와 between class variance 는 다음과 같이 나타나게 됩니다.
 
 <script type="math/tex; mode=display">S_{W}^\Phi = \sum_{i=1,2}\sum_{i=1,2}^N(\Phi \left(x_n^i \right) - m_i^\Phi)(\Phi \left(x_n^i \right) - m_i^\Phi)^T </script>
@@ -133,9 +135,13 @@ within class variance와 between class variance 는 다음과 같이 나타나�
 
 <script type="math/tex; mode=display">m_i^\Phi = \frac{1}{N_i}\sum_{i=1}^N \Phi \left(x_j^i \right)</script>
 
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda6.png?raw=true)
+
 projected vector는 다음과 같이 나타나게 됩니다.
 
 <script type="math/tex; mode=display"> w = \sum_{n=1}^N \alpha_n \Phi(x_n) </script>
+
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda7.png?raw=true)
 
 식을 풀어헤치면 결국 Objective function은 다음과 같이 나타납니다.
 
@@ -143,14 +149,21 @@ projected vector는 다음과 같이 나타나게 됩니다.
 <script type="math/tex; mode=display"> M = (\mu_2 - \mu_1)(\mu_2 - \mu_1)^T </script>
 <script type="math/tex; mode=display"> N = \sum_{j=1,2}K_j(I-1_{l_j})K_j^T </script>
 
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda8.png?raw=true)
+
 우리가 구하려는 것은
 
 <script type="math/tex; mode=display">\alpha = N^{-1}(M_2 - M_1)</script>
 
-이고, kernel 에 의해 새롭게 주어진 데이터포인트는 다음과 같다.
+
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda9.png?raw=true)
+
+이고, kernel 에 의해 새롭게 주어진 데이터포인트는 다음과 같습니다.
 
 <script type="math/tex; mode=display">y(x) = (w * \Phi(x)) = \sum_{n=1}^N\alpha_nK(x_n,x)</script>
 
+
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda10.png?raw=true)
 
 
 
