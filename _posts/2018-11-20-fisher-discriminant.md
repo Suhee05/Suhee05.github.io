@@ -59,10 +59,52 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 
 
 ```
-def lda:
+import numpy as np
+import matplotlib.pyplot as plt
+
+    mu_x1, sigma_x1 = 2, 1
+    x1 = mu_x1 + sigma_x1 * np.random.randn(20)
+    mu_y1, sigma_y1 = 2, 1
+    y1 = mu_y1 + sigma_y1 * np.random.randn(20)
+    plt.plot(x1, y1)
+    data1 = np.stack((x1, y1)) #shape (2,20)
+    mean1 = np.mean(data1, axis=-1)
+
+    mu_x2, sigma_x2 = 4, 2
+    x2 = mu_x2 + sigma_x2 * np.random.randn(20)
+    mu_y2, sigma_y2 = 4, 2
+    y2 = mu_y2 + sigma_y2 * np.random.randn(20)
+    plt.plot(x2, y2)
+    data2 = np.stack((x2, y2))
+    mean2 = np.mean(data2, axis=-1)
+
+    all_mean = (mean1+mean2)/2
+
+    # between class covariance matrix
 
 
-   
+    S_B = np.multiply(2, np.outer((mean1 - all_mean), (mean1 - all_mean)))
+          + np.multiply(2, np.outer((mean2 - all_mean), (mean2 - all_mean)))
+
+    # within class covariance matrix
+
+    for i in range(20):
+        norm1=(data1[:,i] - mean1).reshape((2,1))
+        norm2=(data2[:, i] - mean2).reshape((2,1))
+        S_W = np.add(np.dot(norm1, norm1.T), S_W)
+        S_W = np.add(np.dot(norm2, norm2.T), S_W)
+
+
+    # objective function
+    mat = np.dot(np.linalg.pinv(S_W), S_B)
+    eigvals, eigvecs = np.linalg.eig(mat)
+    eiglist = [(eigvals[i], eigvecs[:, i]) for i in range(len(eigvals))]
+    eiglist = sorted(eiglist, key = lambda x : x[0], reverse = True)
+
+    # find w
+    w = np.array([eiglist[i][1] for i in range(2)])
+
+
 ```
 
 
