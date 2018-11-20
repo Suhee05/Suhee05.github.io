@@ -19,6 +19,8 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 
 <script type="math/tex; mode=display">y=w^{\mathsf{T}}x</script>
 
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda1.jpeg?raw=true)
+
 데이터 공간 상의 각 점들이 projection 평면 위에 표현되면 다음과 같이 나타납니다
 
 
@@ -29,28 +31,37 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 
 <script type="math/tex; mode=display">J(w) = \frac{w^{\mathsf{T}}S_{b}w}{w^{\mathsf{T}}S_{w}w}</script>
 
-<script type="math/tex; mode=display">S_{b} , S_{w}</script> 는 각각 between class, within class 의 covariance matrix 입니다.
+<script type="math/tex; mode=display">S_{b} , S_{w}</script> 
+
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda2.jpeg?raw=true)
+
+는 각각 between class, within class 의 covariance matrix 입니다.
 
 
 <script type="math/tex; mode=display">S_b =(m_1 - m_2)(m_1 - m_2)^T 
 </script>
 <script type="math/tex; mode=display">S_w = \sum (X_n - m_1)(X_n - m_1)^T</script>
 
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda3.jpeg?raw=true)
+
 이 때 Lagrangian Dual과 KKT 조건을 활용 하면 다음과 같은 식을 얻을 수 있습니다.
 
 
 <script type="math/tex; mode=display">S_{w}^{-1}S_{b}w = \lambda w</script>
 
-즉 이것은
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/lda4.jpeg?raw=true)
+
 
 <script type="math/tex; mode=display">S_{w}^{-1}S_{b}w</script>
 
-에 대한 eigen value 문제이며, 가장 큰 eigenvalue에 대응하는 eigen vector w 가 우리가 구하고자 하는 것입니다.
+즉 이것은 위에 대한 eigen value 문제이며, 가장 큰 eigenvalue에 대응하는 eigen vector w 가 우리가 구하고자 하는 것입니다.
  
 
 
 ```
 def lda:
+
+
    
 ```
 
