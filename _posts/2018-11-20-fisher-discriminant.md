@@ -33,10 +33,12 @@ $$J(w) = \frac{w^{\mathsf{T}}S_{b}w}{w^{\mathsf{T}}S_{w}w}$$
 
 \(S_{b}\) 와 \(S_{w}\) 는 각각 between class, within class 의 covariance matrix 입니다.
 
-$$S_{b} =(m_{k} - m)(m_{k} - m)^{\mathsf{T}}$$ 
 
-$$S_{w} = \sum_ (X_{n} - m_{1})(X_{n} - m_{1})^{\mathsf{T}} $$
-<script type="math/tex; mode=display">S_w = \sum_ (X_n - m_1)(X_n - m_1)^T</script>
+<script type="math/tex; mode=display">S_b =(m_1 - m_2)(m_1 - m_2)^T 
+</script>
+<script type="math/tex; mode=display">S_w = \sum (X_n - m_1)(X_n - m_1)^T</script>
+
+
 
 ### Kernel Fisher Discriminant 
 
