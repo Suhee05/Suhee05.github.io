@@ -48,12 +48,14 @@ Linear Discriminant Analysis, 즉 LDA는 projection 후 두 class를 가장 잘 
 
 즉 이것은 위에 대한 eigen value 문제이며, 가장 큰 eigenvalue에 대응하는 eigen vector w 가 우리가 구하고자 하는 것입니다.
 
-아래코드는 위 수식을 통해 class 2 개의 데이터셋에 대해 LDA로 w 값을 찾아낸 것입니다.
+아래코드는 위 수식을 통해 class 2 개의 데이터셋(아래 사진 추가함)에 대해 LDA로 w 값을 찾아낸 것입니다. 데이터셋은 랜덤으로 생성되기때문에 아래 사진은 예시입니다.
 
  
-
+![Alt text](https://github.com/Suhee05/Suhee05.github.io/blob/master/images/data.png?raw=true)
 
 ```
+# 제대로 실행안되던 부분 수정했습니다
+
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -61,7 +63,7 @@ import matplotlib.pyplot as plt
     x1 = mu_x1 + sigma_x1 * np.random.randn(20)
     mu_y1, sigma_y1 = 2, 1
     y1 = mu_y1 + sigma_y1 * np.random.randn(20)
-    plt.plot(x1, y1)
+    plt.plot(x1, y1, 'ro')
     data1 = np.stack((x1, y1)) #shape (2,20)
     mean1 = np.mean(data1, axis=-1)
 
@@ -69,7 +71,7 @@ import matplotlib.pyplot as plt
     x2 = mu_x2 + sigma_x2 * np.random.randn(20)
     mu_y2, sigma_y2 = 4, 2
     y2 = mu_y2 + sigma_y2 * np.random.randn(20)
-    plt.plot(x2, y2)
+    plt.plot(x2, y2, 'bo')
     data2 = np.stack((x2, y2))
     mean2 = np.mean(data2, axis=-1)
 
@@ -78,8 +80,9 @@ import matplotlib.pyplot as plt
     # between class covariance matrix
 
 
-    S_B = np.multiply(2, np.outer((mean1 - all_mean), (mean1 - all_mean)))
-          + np.multiply(2, np.outer((mean2 - all_mean), (mean2 - all_mean)))
+    S_B = np.multiply(2, np.outer((mean1 - all_mean), (mean1 - all_mean))) + np.multiply(2, np.outer((mean2 - all_mean), (mean2 - all_mean)))
+    
+    S_W = np.zeros(S_B.shape)
 
     # within class covariance matrix
 
